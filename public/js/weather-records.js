@@ -99,58 +99,58 @@ $(document).ready(function () {
         scales: {
           y1: {
             type: 'linear',
-            position: 'left',
+            position: window.innerWidth <= 767 ? 'hidden' : 'right',
             beginAtZero: true,
             title: {
-              display: true,
+              display: window.innerWidth > 767,
               text: 'Temperatura (°C)'
             }
           },
           y2: {
             type: 'linear',
-            position: 'right',
+            position: window.innerWidth <= 767 ? 'hidden' : 'right',
             beginAtZero: true,
             grid: {
               drawOnChartArea: false
             },
             title: {
-              display: true,
+              display: window.innerWidth > 767,
               text: 'Velocidade do Vento (km/h)'
             }
           },
           y3: {
             type: 'linear',
-            position: 'right',
+            position: window.innerWidth <= 767 ? 'hidden' : 'right',
             beginAtZero: true,
             grid: {
               drawOnChartArea: false
             },
             title: {
-              display: true,
+              display: window.innerWidth > 767,
               text: 'Umidade (%)'
             }
           },
           y4: {
             type: 'linear',
-            position: 'right',
+            position: window.innerWidth <= 767 ? 'hidden' : 'right',
             beginAtZero: true,
             grid: {
               drawOnChartArea: false
             },
             title: {
-              display: true,
+              display: window.innerWidth > 767,
               text: 'Cobertura de Nuvens (%)'
             }
           },
           y5: {
             type: 'linear',
-            position: 'right',
+            position: window.innerWidth <= 767 ? 'hidden' : 'right',
             beginAtZero: true,
             grid: {
               drawOnChartArea: false
             },
             title: {
-              display: true,
+              display: window.innerWidth > 767,
               text: 'Índice UV'
             }
           }

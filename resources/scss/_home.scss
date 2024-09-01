@@ -1,6 +1,6 @@
 .center-container {
     .outside-form {
-        width: 100%;
+        width: calc(95% - 20px);
         max-width: 400px;
 
         .form-group {
@@ -8,3 +8,4 @@
         }
     }
 }
+

@@ -1,33 +1,33 @@
-$icon-size: 60px; // Tamanho aumentado dos ícones
-$icon-color: #1abc9c; // Cor do ícone já usada
+$icon-size: 60px;
+$icon-color: #1abc9c;
 
 .weather-details {
-    width: 100%;
-    max-width: 700px; // Largura máxima um pouco maior
-    margin: 0 auto 30px; // Centralizado e mais espaçamento inferior
+    max-width: 800px;
+    margin: 0 auto;
+    width: calc(100% - 40px);
+    overflow: hidden;
 
     p {
-        margin: 15px 0; // Mais espaço entre as linhas
-        font-family: 'Helvetica Neue', sans-serif;
-        font-size: 18px; // Fonte um pouco maior para melhor legibilidade
-        color: $text-color; // Cor do texto
+        margin: 15px 0;
+        font-size: 18px; 
+        color: $text-color;
 
         strong {
-            color: $button-color; // Cor do texto em negrito para destaque
+            color: $button-color;
         }
 
         i {
-            margin-right: 12px; // Espaço entre ícone e texto
-            color: $icon-color; // Cor dos ícones
+            margin-right: 12px;
+            color: $icon-color;
         }
+    }
+
+    .weather-icon {
+        width: $icon-size;
+        height: $icon-size;
+        margin: 10px 5px;
+        vertical-align: middle; 
+        color: $icon-color;
     }
 }
 
-// Estilo para ícones de clima
-.weather-icon {
-    width: $icon-size;
-    height: $icon-size;
-    margin: 10px 5px;
-    vertical-align: middle; // Alinhar ícones com o texto
-    color: $icon-color; // Usar a mesma cor definida
-}

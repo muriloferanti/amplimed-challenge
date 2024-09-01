@@ -4,7 +4,7 @@
     <h1>Clima em {{ $location['name'] }}, {{ $location['country'] }}</h1>
     
     <div class="weather-details content-block">
-        <p><i class="fas fa-calendar-day"></i> <strong>Data e Hora Local:</strong> {{ $weather['observation_time'] }}</p>
+        <p><i class="fas fa-calendar-day"></i> <strong>Data e Hora:</strong> {{ $weather['observation_time'] }}</p>
         <p><i class="fas fa-temperature-high"></i> <strong>Temperatura:</strong> {{ $weather['temperature'] }}°C</p>
         <p><i class="fas fa-cloud-sun"></i> <strong>Descrição:</strong> {{ $weather['weather_descriptions'][0] }}</p>
         <p><i class="fas fa-wind"></i> <strong>Vento:</strong> {{ $weather['wind_speed'] }} km/h ({{ $weather['wind_dir'] }})</p>

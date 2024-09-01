@@ -20,6 +20,10 @@ $input-color: #161616; // Cor escura para o input
     }
 }
 
+a, button, p, h1, span, table { 
+    font-family: 'Helvetica Neue', sans-serif;
+}
+
 body { 
     margin: 0;
     padding: 0;
@@ -48,7 +52,6 @@ body {
 
 label {
     display: block;
-    font-family: 'Arial', sans-serif;
     color: $text-color;
     margin-bottom: 5px;
 }
@@ -72,7 +75,6 @@ input[type="text"] {
     padding: 10px 20px;
     margin: 5px;
     border-radius: 4px;
-    font-family: 'Helvetica Neue', sans-serif;
     font-size: 16px;
     text-align: center;
     cursor: pointer;
@@ -108,7 +110,6 @@ input[type="text"] {
 }
 
 h1 {
-    font-family: 'Helvetica Neue', sans-serif;
     color: $h1-color;
     margin-bottom: 20px;
     text-align: center;
@@ -162,7 +163,6 @@ header {
     }
     #global-weather{
         color: #fff;
-        font-family: 'Arial', sans-serif;
         padding: 10px;
         overflow: hidden;
         white-space: nowrap;
@@ -199,6 +199,17 @@ header {
     }
 }
 
+@media (max-width: 768px) {
+    h1 {
+        font-size: 23px;
+    }
+    body {
+        background-size: auto 75%;
+    }
+    .container {
+        padding: 5px;
+    }
+}
 
 @import "home";
 @import "weather";

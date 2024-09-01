@@ -6,6 +6,10 @@ $(document).ready(function() {
     homeForm();
     list();
 
+    $(window).resize(function() {
+        list();
+    });
+
     function homeForm() {
         $('.input-zip-code').on('input', function() {
             let zipCode = $(this).val().replace(/\D/g, '');
@@ -48,35 +52,39 @@ $(document).ready(function() {
     }
 
     function list() {
-        $.ajax({
-            url: '/weather-records-latest',
-            method: 'GET',
-            success: function(response) {
-                if (response.success) {
-                    const $elementList = $('#global-weather');
-                    const records = response.records;
-                    const itemContent = records.map(record => 
-                        `<div class="item">
-                            <span class="city">${record.city}</span> 
-                            <div>
-                                <p class="temperature">${record.temperature}°C</p> 
+        if ($(window).width() > 768) {
+            $.ajax({
+                url: '/weather-records-latest',
+                method: 'GET',
+                success: function(response) {
+                    if (response.success) {
+                        const $elementList = $('#global-weather');
+                        const records = response.records;
+                        const itemContent = records.map(record => 
+                            `<div class="item">
+                                <span class="city">${record.city}</span> 
                                 <div>
-                                    <p class="wind-speed">Vento: ${record.wind_speed} km/h</p> 
-                                    <p class="date">${new Date(record.saved_at).toLocaleDateString()}</p>
+                                    <p class="temperature">${record.temperature}°C</p> 
+                                    <div>
+                                        <p class="wind-speed">Vento: ${record.wind_speed} km/h</p> 
+                                        <p class="date">${new Date(record.saved_at).toLocaleDateString()}</p>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        `
-                    ).join(''); 
-    
-                    $elementList.html(itemContent);
-                } else {
-                    console.error('Erro ao obter dados.');
+                            `
+                        ).join(''); 
+        
+                        $elementList.html(itemContent);
+                    } else {
+                        console.error('Erro ao obter dados.');
+                    }
+                },
+                error: function() {
+                    console.error('Erro na requisição AJAX.');
                 }
-            },
-            error: function() {
-                console.error('Erro na requisição AJAX.');
-            }
-        });
+            });
+        } else {
+            $('#global-weather').html('');
+        }
     }
 });

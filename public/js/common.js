@@ -10756,6 +10756,9 @@ jquery__WEBPACK_IMPORTED_MODULE_0__(document).ready(function () {
   menu();
   homeForm();
   list();
+  jquery__WEBPACK_IMPORTED_MODULE_0__(window).resize(function () {
+    list();
+  });
   function homeForm() {
     jquery__WEBPACK_IMPORTED_MODULE_0__('.input-zip-code').on('input', function () {
       var zipCode = jquery__WEBPACK_IMPORTED_MODULE_0__(this).val().replace(/\D/g, '');
@@ -10791,25 +10794,29 @@ jquery__WEBPACK_IMPORTED_MODULE_0__(document).ready(function () {
     });
   }
   function list() {
-    jquery__WEBPACK_IMPORTED_MODULE_0__.ajax({
-      url: '/weather-records-latest',
-      method: 'GET',
-      success: function success(response) {
-        if (response.success) {
-          var $elementList = jquery__WEBPACK_IMPORTED_MODULE_0__('#global-weather');
-          var records = response.records;
-          var itemContent = records.map(function (record) {
-            return "<div class=\"item\">\n                            <span class=\"city\">".concat(record.city, "</span> \n                            <div>\n                                <p class=\"temperature\">").concat(record.temperature, "\xB0C</p> \n                                <div>\n                                    <p class=\"wind-speed\">Vento: ").concat(record.wind_speed, " km/h</p> \n                                    <p class=\"date\">").concat(new Date(record.saved_at).toLocaleDateString(), "</p>\n                                </div>\n                            </div>\n                        </div>\n                        ");
-          }).join('');
-          $elementList.html(itemContent);
-        } else {
-          console.error('Erro ao obter dados.');
+    if (jquery__WEBPACK_IMPORTED_MODULE_0__(window).width() > 768) {
+      jquery__WEBPACK_IMPORTED_MODULE_0__.ajax({
+        url: '/weather-records-latest',
+        method: 'GET',
+        success: function success(response) {
+          if (response.success) {
+            var $elementList = jquery__WEBPACK_IMPORTED_MODULE_0__('#global-weather');
+            var records = response.records;
+            var itemContent = records.map(function (record) {
+              return "<div class=\"item\">\n                                <span class=\"city\">".concat(record.city, "</span> \n                                <div>\n                                    <p class=\"temperature\">").concat(record.temperature, "\xB0C</p> \n                                    <div>\n                                        <p class=\"wind-speed\">Vento: ").concat(record.wind_speed, " km/h</p> \n                                        <p class=\"date\">").concat(new Date(record.saved_at).toLocaleDateString(), "</p>\n                                    </div>\n                                </div>\n                            </div>\n                            ");
+            }).join('');
+            $elementList.html(itemContent);
+          } else {
+            console.error('Erro ao obter dados.');
+          }
+        },
+        error: function error() {
+          console.error('Erro na requisição AJAX.');
         }
-      },
-      error: function error() {
-        console.error('Erro na requisição AJAX.');
-      }
-    });
+      });
+    } else {
+      jquery__WEBPACK_IMPORTED_MODULE_0__('#global-weather').html('');
+    }
   }
 });
 
