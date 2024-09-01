@@ -1,0 +1,205 @@
+@import '~@fortawesome/fontawesome-free/css/all.min.css';
+
+$form-background: #34495e; // Fundo do formulário
+$button-color: #1abc9c; // Verde suave para o botão
+$button-color: #1abc9c; // Verde suave para o botão
+$h1-color: #276879; // Texto claro
+$text-color: #FFF; // Texto claro
+$placeholder-color: #303030; // Cor escura para o placeholder
+$input-color: #161616; // Cor escura para o input
+
+@keyframes slideUpDown {
+    0% {
+        background-position: bottom right;
+    }
+    50% {
+        background-position: center right;
+    }
+    100% {
+        background-position: bottom right;
+    }
+}
+
+body { 
+    margin: 0;
+    padding: 0;
+    position: relative;
+    background-color: #d4d4d4;
+    background-image: url('/images/clouds-and-sun.svg');
+    background-position: bottom right;
+    background-repeat: no-repeat;
+    background-size: auto 50%; 
+    animation: slideUpDown 100s ease infinite;
+}
+
+.text-danger {
+    color: #ff4f4f;
+    font-size: 16px;
+    display: block;
+    margin-top: 5px;
+}
+
+.text-success {
+    color: #39d425;
+    font-size: 16px;
+    display: block;
+    margin-top: 5px;
+}
+
+label {
+    display: block;
+    font-family: 'Arial', sans-serif;
+    color: $text-color;
+    margin-bottom: 5px;
+}
+
+input[type="text"] {
+    width: -webkit-fill-available;
+    padding: 10px;
+    border: 1px solid #7f8c8d;
+    border-radius: 4px;
+    background-color: #eeeeee;
+    color: $input-color;
+}
+
+::-webkit-input-placeholder, ::-moz-placeholder, :-ms-input-placeholder, :-moz-placeholder{
+    color: $placeholder-color;
+    opacity: 1; 
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 5px;
+    border-radius: 4px;
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: 16px;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+    border: 0px;
+    i, svg { 
+        margin-right: 7px;
+    }
+    &.btn-primary {
+        background-color: $button-color;
+        color: #ecf0f1;
+
+        &:hover {
+            background-color: darken($button-color, 10%);
+        }
+    }
+    
+    &.btn-secondary {
+        background-color: #7f8c8d; 
+        color: #ecf0f1;
+
+        &:hover {
+            background-color: #95a5a6;
+        }
+    }
+}
+.content-block {
+    background-color: $form-background;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+    font-family: 'Helvetica Neue', sans-serif;
+    color: $h1-color;
+    margin-bottom: 20px;
+    text-align: center;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
+}
+header {
+    background-color: #333;
+    .content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 95%;
+        margin-left: auto;
+        margin-right: auto;
+        min-height: 80px;
+    }
+    ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        gap: 20px;
+
+        li {
+            display: inline;
+            
+            a {
+                color: #ffffff;
+                text-decoration: none;
+                font-size: 16px;
+                padding: 10px;
+                transition: color 0.3s ease;
+
+                &:hover {
+                    color: #1abc9c; 
+                }
+
+                i {
+                    margin-right: 5px;
+                }
+            }
+        }
+    }
+    #global-weather{
+        color: #fff;
+        font-family: 'Arial', sans-serif;
+        padding: 10px;
+        overflow: hidden;
+        white-space: nowrap;
+        display: flex;
+        justify-content: center;
+        .item {
+            padding: 0 15px;
+            font-size: 14px;
+            line-height: 1.6;
+            border-right: 1px solid $text-color;;
+            &:last-child {
+                border-right: 0px;
+            }
+            .temperature {
+                color: #ffeb3b;
+                font-size: 25px;
+            }
+    
+            p {
+                color: $text-color; 
+                margin: 0px
+            }
+            > div {
+                display: flex;
+                align-items: center;
+                > div {
+                    margin-left: 23px;
+                    p {
+                        font-size: 12px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+@import "home";
+@import "weather";
+@import "weather-records";
