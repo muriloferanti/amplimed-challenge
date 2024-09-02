@@ -12,7 +12,7 @@
 - **Hashids**: Encode e decode de informações.
 - **SASS**: Pré-processador CSS para escrever estilos de forma mais simples.
 - **Docker**: Plataforma para criar, implantar e executar aplicações em contêineres.
-- **phpMyAdmin**: Ferramenta web para gerenciamento de bancos de dados MySQL.
+- **PhpMyAdmin**: Ferramenta web para gerenciamento de bancos de dados MySQL.
 - **PhpUnit**: Desenvolvimento dos testes para garantir confiabilidade do código.
 
 ## Padrões Utilizados
