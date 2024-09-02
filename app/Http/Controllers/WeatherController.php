@@ -26,6 +26,10 @@ class WeatherController extends Controller
     public function show($location): View
     {
         $weatherData = $this->weatherService->getWeather($location);
+  
+        if (isset($weatherData['error'])) {
+            return view('errors.weather', ['message' => $weatherData['error']]);
+        }
 
         $search = Search::firstOrNew(
             [

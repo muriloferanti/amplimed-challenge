@@ -9,7 +9,7 @@ $(document).ready(function() {
 
     $('#save-weather').on('click', function() {
         $.ajax({
-            url: `/weather-records/${location}`,
+            url: `/weather-records`,
             method: 'POST',
             data: {
                 location: location,

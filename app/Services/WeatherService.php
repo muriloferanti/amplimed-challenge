@@ -28,7 +28,13 @@ class WeatherService
         ]);
 
         if ($response->successful()) {
-            return $response->json();
+            $data = $response->json();
+
+            if (isset($data['error'])) {
+                return ['error' => $data['error']['info'] ?? 'Erro desconhecido'];
+            }
+
+            return $data;
         }
 
         return ['error' => 'Não foi possível obter o clima'];

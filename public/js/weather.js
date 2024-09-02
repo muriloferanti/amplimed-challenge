@@ -30,7 +30,7 @@ $(document).ready(function () {
   var location = getLocationFromUrl();
   $('#save-weather').on('click', function () {
     $.ajax({
-      url: "/weather-records/".concat(location),
+      url: "/weather-records",
       method: 'POST',
       data: {
         location: location,

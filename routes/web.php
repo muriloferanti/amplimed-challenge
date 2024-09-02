@@ -16,20 +16,20 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::group(['middleware' => ['web']], function () {
-    Route::get('/', function () {
-        return view('home');
-    });
 
-    Route::get('/zip-code/{zipCode}', [ZipCodeController::class, 'show'])->name('zipcode.show');
-
-    Route::get('/weather/{location}', [WeatherController::class, 'show'])->name('weather.show');
-
-    Route::get('/weather-records', [WeatherRecordController::class, 'index'])->name('weather-records');
-
-    Route::get('/weather-compare', [WeatherRecordController::class, 'compare'])->name('weather-compare');
-
-    Route::get('/weather-records-latest', [WeatherRecordController::class, 'latest'])->name('weather-records-latest');
-
-    Route::post('/weather-records/{location}', [WeatherRecordController::class, 'store']);
+Route::get('/', function () {
+    return view('home');
 });
+
+Route::get('/zip-code/{zipCode}', [ZipCodeController::class, 'show'])->name('zipcode.show');
+
+Route::get('/weather/{location}', [WeatherController::class, 'show'])->name('weather.show');
+
+Route::get('/weather-records', [WeatherRecordController::class, 'index'])->name('weather-records');
+
+Route::get('/weather-compare', [WeatherRecordController::class, 'compare'])->name('weather-compare');
+
+Route::get('/weather-records-latest', [WeatherRecordController::class, 'latest'])->name('weather-records-latest');
+
+Route::post('/weather-records', [WeatherRecordController::class, 'store']);
+
