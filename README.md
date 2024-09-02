@@ -23,3 +23,8 @@
 
 3. **CamelCase**: Definições de veriáveis PHP e JavaScript.
 
+# Meu Projeto
+
+Aqui está um GIF que demonstra a funcionalidade do projeto:
+
+![Descrição do GIF](docs/weather-challenge.gif)
