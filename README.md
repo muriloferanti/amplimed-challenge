@@ -27,4 +27,4 @@
 
 Aqui está um GIF que demonstra a funcionalidade do projeto:
 
-![Descrição do GIF](docs/weather-challenge.gif)
+![Descrição do GIF](docs/weather-challenge-v2.gif)
