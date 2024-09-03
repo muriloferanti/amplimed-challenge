@@ -1,9 +1,9 @@
 @import '~@fortawesome/fontawesome-free/css/all.min.css';
 
-$form-background: #34495e; // Fundo do formulário
+$form-background: linear-gradient(135deg, #333 0%, #34495e 100%); // Fundo do formulário
 $button-color: #1abc9c; // Verde suave para o botão
 $button-color: #1abc9c; // Verde suave para o botão
-$h1-color: #276879; // Texto claro
+$h1-color: #333a41; // Texto claro
 $text-color: #FFF; // Texto claro
 $placeholder-color: #303030; // Cor escura para o placeholder
 $input-color: #161616; // Cor escura para o input
@@ -103,7 +103,7 @@ input[type="text"] {
     }
 }
 .content-block {
-    background-color: $form-background;
+    background: $form-background;
     border-radius: 8px;
     padding: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -124,7 +124,7 @@ h1 {
     box-sizing: border-box;
 }
 header {
-    background-color: #333;
+    background: linear-gradient(135deg, #333 0%, #34495e 100%);
     .content {
         display: flex;
         justify-content: space-between;

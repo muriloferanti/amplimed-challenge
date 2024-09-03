@@ -1,33 +1,75 @@
-$icon-size: 60px;
-$icon-color: #1abc9c;
-
 .weather-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    color: #fff;
     max-width: 800px;
     margin: 0 auto;
     width: calc(100% - 40px);
     overflow: hidden;
 
-    p {
-        margin: 15px 0;
-        font-size: 18px; 
-        color: $text-color;
-
-        strong {
-            color: $button-color;
+    .temperature {
+        font-size: 4rem;
+        font-weight: bold;
+        margin-bottom: 10px;
+        &.cold {
+            color: #6868f9; // Azul para temperaturas frias
         }
+    
+        &.hot {
+            color: #ff4f4f; // Vermelho para temperaturas quentes
+        }
+    }
+
+    .description {
+        font-size: 1.5rem;
+        margin-bottom: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
 
         i {
-            margin-right: 12px;
-            color: $icon-color;
+            font-size: 2rem;
+            margin-right: 10px;
         }
     }
 
     .weather-icon {
-        width: $icon-size;
-        height: $icon-size;
-        margin: 10px 5px;
+        width: 100px;
+        height: 100px;
+        margin-bottom: 20px;
+        border-radius: 100%;
         vertical-align: middle; 
-        color: $icon-color;
+        color: #1abc9c;
+    }
+
+    .additional-info {
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+        margin-top: 20px;
+        flex-wrap: wrap;
+        gap: 28px;
+        align-items: center;
+        p {
+            font-size: 1rem;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: $text-color;
+            i {
+                font-size: 1.5rem;
+                margin-bottom: 5px;
+                color: #1abc9c;
+            }
+
+            strong {
+                color: $button-color;
+            }
+
+        }
     }
 }
 

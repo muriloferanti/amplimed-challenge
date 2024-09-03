@@ -44,6 +44,16 @@ class WeatherController extends Controller
         $search->session_id = Session::getId();
         $search->save();
 
+        $tempClass = 'good';
+        if (isset($weatherData['current']['temperature'])) {
+            $temperature = $weatherData['current']['temperature'];
+            if ($temperature < 12) {
+                $tempClass = 'cold';
+            } elseif ($temperature > 25) {
+                $tempClass = 'hot';
+            }
+        }
+        $weatherData['current']['status'] = $tempClass;
         return view('weather', ['weather' => $weatherData['current'], 'location' => $weatherData['location']]);
     }
 }
