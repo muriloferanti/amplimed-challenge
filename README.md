@@ -21,7 +21,7 @@
 
 2. **Services**: Utilizado para organizar conexões com API's externas.
 
-3. **CamelCase**: Definições de veriáveis PHP e JavaScript.
+3. **CamelCase**: Definições de variáveis PHP e JavaScript.
 
 # Meu Projeto
 
