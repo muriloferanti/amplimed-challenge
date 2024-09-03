@@ -71,5 +71,17 @@
 
         }
     }
+    .buttons {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        margin-top: 35px;
+        flex-direction: row-reverse;
+    }
 }
 
+@media (max-width: 480px) {
+    .weather-details .additional-info p {
+        width: 40%;
+    }
+}

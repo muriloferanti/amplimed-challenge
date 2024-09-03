@@ -31,6 +31,11 @@
                 <p><i class="fas fa-thermometer-half"></i> <strong>Sensação Térmica:</strong> {{ $weather['feelslike'] ?? 'Sensação Térmica indisponível' }}°C</p>
                 <p><i class="fas fa-sun"></i> <strong>Índice UV:</strong> {{ $weather['uv_index'] ?? 'Índice UV indisponível' }}</p>
             </div>
+            <div id="message"></div>
+            <div class="buttons">
+                <button id="save-weather" class="btn btn-primary"><i class="fas fa-save"></i> Salvar Clima</button>
+                <a href="{{ url('/') }}" class="btn btn-secondary"><i class="fas fa-arrow-left"></i> Voltar</a>
+            </div>
         </div>
 
 

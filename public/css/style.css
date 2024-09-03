@@ -38,14 +38,14 @@ body {
   color: #ff4f4f;
   font-size: 16px;
   display: block;
-  margin-top: 5px;
+  margin-top: 20px;
 }
 
 .text-success {
-  color: #39d425;
+  color: #88ff4f;
   font-size: 16px;
   display: block;
-  margin-top: 5px;
+  margin-top: 20px;
 }
 
 label {
@@ -70,7 +70,7 @@ input[type=text] {
 
 .btn {
   display: inline-block;
-  padding: 10px 20px;
+  padding: 10px 15px;
   margin: 5px;
   border-radius: 4px;
   font-size: 16px;
@@ -277,7 +277,19 @@ header #global-weather .item > div > div p {
 .weather-details .additional-info p strong {
   color: #1abc9c;
 }
+.weather-details .buttons {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 35px;
+  flex-direction: row-reverse;
+}
 
+@media (max-width: 480px) {
+  .weather-details .additional-info p {
+    width: 40%;
+  }
+}
 .weather-records-container > div {
   max-width: 800px;
   padding: 0px;
